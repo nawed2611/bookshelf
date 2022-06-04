@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+}
+.NavLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 60%;
+  list-style: none;
+  justify-content: space-around;
+}
+.NavLinks a {
+  margin: 6px;
+}
+.About {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
