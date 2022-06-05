@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../Styles/Home-Style.css";
 
 export default function () {
 
@@ -18,21 +19,37 @@ export default function () {
     setBookFile(e.target.files[0]);
   }
 
-  function onSubmit(e){
+  function handleClick(e){
     e.preventDefault();
-
     console.log(bookName, author, bookFile);
+  }
+
+  function handleSubmit(){
+      const postURL = "http://localhost:8800/api/book";
+      fetch(postURL, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          bookName: bookName,
+          author: author
+        })
+      }).then( ()=> {
+        alert("Your Book is Added!");
+
+      })
   }
 
 
   return (
-    <div>
-      <h1 style={{margin: "1rem"}}>DashBoard</h1>
-
-      <form>
+    <div className="DashBoard">
+      <form onSubmit={handleSubmit}>
+      <h1>DashBoard</h1>
         <label>
           Book Title :
-          <input type="text" value={bookName} onChange={onBookNameChange} name="bookName" placeholder="Enter Book Name here..." />
+          <input required type="text" value={bookName} onChange={onBookNameChange} name="bookName" placeholder="Enter Book Name here..." />
         </label>
 
         <label>
@@ -41,13 +58,18 @@ export default function () {
         </label>
 
         <label>
-          Book :
+          Upload your Book :
           <input type="file" value={bookFile} onChange={onBookFileChange} name="bookFile" />
         </label>
 
-        <button onClick={onSubmit} type="submit">Submit</button>
+        <button onClick={handleClick} type="submit">Submit</button>
 
       </form>
+
+      <div className="BooksDiv">
+        <h1>Your Books</h1>
+        <p>All Your Books are here-</p>
+      </div>
     </div>
   );
 }
