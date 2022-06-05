@@ -1,15 +1,17 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .Navbar {
   display: flex;
   justify-content: space-around;
+  background-color: rgb(242 229 255);
   align-items: center;
-  padding: 0.5rem;
-  margin-top: 2rem;
-  font-size: 2.5rem;
+  padding: 0.8rem;
+  min-height: 15vh;
+  font-size: 2rem;
 }
 .NavLinks {
   display: flex;
@@ -20,10 +22,62 @@
   justify-content: space-around;
 }
 .NavLinks a {
-  margin: 6px;
+  padding: 1rem;
+  margin: 0 2rem 0 2rem;
 }
 .About {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+.AboutDiv{
+  display: flex;
+  min-width: 50%;
+  margin: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+.SignInDiv{
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  min-width: 45%;
+  margin: 1rem;
+  padding: 2rem;
+  min-height: 70vh;
+}
+.IntroDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.DashBoard{
+  display: flex;
+  margin: 1rem;
+  padding: 1rem;
+}
+form{
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-grow: 4;
+  width: 30%;
+  height: 60vh;
+  border: 1px solid black;
+}
+.BooksDiv{
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 100%;
+
 }
