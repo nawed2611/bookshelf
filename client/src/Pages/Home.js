@@ -11,9 +11,21 @@ export default function () {
   return (
     <div className="Home">
       <div className="About">
-        <img src={Logo} alt="Logo" />
-        <button onClick={async () => google()}>Sign In With Google</button>
-        <p>{status}</p>
+        <div className="AboutDiv">
+          <img src={Logo} alt="Logo" />
+        </div>
+        <div className="SignInDiv">
+          <div className="IntroDiv">
+            <h2>Welcome to BookShelf</h2>
+            <h4>A Place for all your study needs</h4>
+          </div>
+          <div className="SignIn">
+            <h3>Login to Continue</h3>
+            <button onClick={async () => google()}>Continue With Google</button>
+            <p>{status}</p>
+          </div>
+        </div>
+
       </div>
     </div>
   );

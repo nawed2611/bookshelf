@@ -4,7 +4,7 @@ import "../Styles/Home-Style.css";
 
 export default function () {
   return (
-    <div className="Navbar">
+    <div className="Navbar flex mx-10">
       <Link to="/">
         <h1>BookShelf</h1>
       </Link>
