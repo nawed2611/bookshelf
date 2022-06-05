@@ -3,12 +3,14 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const authRoute = require('./Routes/auth');
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 
 mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
     console.log("Connected to MongoDB");
